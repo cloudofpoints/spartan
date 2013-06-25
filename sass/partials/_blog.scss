@@ -1,0 +1,335 @@
+h1.entry-title {
+	font-family: $serif;
+	font-style: italic;
+	font-weight: 400;
+	margin-bottom: 0.5em;
+
+	> a, a:visited, a:hover {
+		text-decoration: none;
+		border-bottom: 0;
+	}
+}
+
+.article_meta {
+  margin: 0.5em 0;
+	ul, li {
+		color: $text-color-light;
+		text-transform: uppercase;
+		margin: 0 0 0 0;
+    display: inline-block;
+	}
+	a, a:visited, a:hover {
+		text-decoration: none;
+		border-bottom: 0;
+		padding: 0;
+	}
+}
+
+.article_digest {
+	text-decoration: none;
+	border-bottom: 0;
+	&:hover {
+		border-bottom: 0;
+	}
+}
+
+.article_footer_meta {
+  font-size: $base-font-size * 0.8;
+  line-height: 1.5em;
+  a, a:visited {
+    color: $link-color-hover;
+    text-decoration: none;
+    border-bottom: none;
+    &:hover {
+      border-bottom: 1px dotted;
+    }
+  }
+}
+
+.post_pagination_delimiter {
+  font-size: $base-font-size;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+img.body_img {
+  max-width:100%;
+  height:auto;
+  padding:5px;
+  border:1px solid #d8d5d5;
+}
+
+article {
+  padding-top: 1em;
+
+  .entry-content {
+    h3 {
+      font-style: italic
+    }
+    a, a:visited {
+      text-decoration: none;
+      color: $link-color-hover;
+      border-bottom: none;
+      &:hover {
+        border-bottom: 1px dotted;
+      }
+    }
+    li ul {
+      font-size : 90%;
+    }
+  }
+
+  ul, ol {
+    margin-left: 2em;
+  }
+
+  ul, li {
+    display: list-item;
+    list-style: square outside none;
+  }
+
+  a, a:visited {
+    color: $link-color;
+    border-bottom:1px dotted;
+  }
+
+  a:hover {
+    color: $link-color-hover;
+    border-bottom:1px dotted;
+  }
+
+  header {
+    h1.entry-title {
+      font-family: $serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {        
+  h1.entry-title { 
+    font-size: $base-font-size * 0.8; // iphone header font
+    line-height: $base-line-height * 0.8;
+  }
+  .entry-content {
+    p, ul, pre code, blockquote p {
+  	  font-size: $base-font-size * 0.5;
+      letter-spacing: 0.5px;
+  		line-height: $base-line-height * 1.0;
+    }
+  	p {
+  		margin-bottom: 1em;
+  	}
+  	ul {
+  		margin-left: 0.5em;
+  	} 
+  }
+  .blog-index {
+    article {
+      padding-top: 0.5em;
+    }
+  }    
+  .article_meta {
+  	font-size: $base-font-size * 0.6;
+  	ul, li {
+  		padding-right: 10px;
+  	}
+  }
+  .article_digest {
+  	font-size: $base-font-size * 0.5;
+    letter-spacing: 0.5px;
+  }
+  .article_footer_meta {
+    font-size: $base-font-size * 0.5;
+  }
+  .article_bio {
+    padding-top: 1.0em;
+    h1 {
+      text-align: center;
+    }
+    p {
+      font-size: $base-font-size * 0.6;   
+      line-height: $base-line-height;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {        
+  h1.entry-title { 
+    font-size: $base-font-size * 0.8; // iphone header font
+    line-height: $base-line-height * 0.8;
+  }
+  .entry-content {
+    p, ul, pre code, blockquote p {
+      font-size: $base-font-size * 0.5;
+      letter-spacing: 0.5px;
+      line-height: $base-line-height * 1.0;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    ul {
+      margin-left: 0.5em;
+    } 
+  }
+  .blog-index {
+    article {
+      padding-top: 0.5em;
+    }
+  }    
+  .article_meta {
+    font-size: $base-font-size * 0.6;
+    ul, li {
+      padding-right: 10px;
+    }
+  }
+  .article_digest {
+    font-size: $base-font-size * 0.5;
+    letter-spacing: 0.5px;
+  }
+  .article_footer_meta {
+    font-size: $base-font-size * 0.5;
+  }
+  .article_bio {
+    padding-top: 1.0em;
+    h1 {
+      text-align: center;
+    }
+    p {
+      font-size: $base-font-size * 0.6;   
+      line-height: $base-line-height;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {        
+  h1.entry-title { 
+    font-size: $base-font-size * 1.2; // ipad header font
+    line-height: $base-line-height * 0.8;
+  }
+  .entry-content {
+    p, ul, pre code, blockquote p {
+      font-size: $base-font-size * 0.8;
+      letter-spacing: 0.5px;
+      line-height: $base-line-height * 1.0;      
+    }    
+  	p {
+  		margin-bottom: 1.2em;
+  	}
+  }
+  .blog-index {
+    article {
+      padding-top: 2.0em;
+    }
+  }  
+  .article_meta {
+  	font-size: $base-font-size * 0.8;
+  	ul, li {
+  		padding-right: 15px;
+  	}
+  }
+  .article_digest {
+  	font-size: $base-font-size * 0.8;
+    letter-spacing: 0.5px;
+  }  
+  .article_footer_meta {
+    font-size: $base-font-size * 0.75;
+  }
+  .article_bio {
+    padding-top: 2.0em;
+    h1 {
+      text-align: center;
+    }
+    p {
+      font-size: $base-font-size * 0.8;   
+      line-height: $base-line-height;
+    }
+  }  
+}
+
+@media only screen and (min-width: 1224px) {        
+  h1.entry-title { 
+    font-size: $base-font-size * 1.6; // laptop/desktop header font
+    line-height: $base-line-height * 0.8;
+  }
+  .entry-content {
+    p, ul, pre code, blockquote p {
+      font-size: $base-font-size * 0.8;
+      line-height: $base-line-height * 1.0;      
+    }    
+  	p {
+  		margin-bottom: 1.5em;  		
+  	}
+  }
+  .blog-index {
+    article {
+      padding-top: 2.0em;
+    }
+  }  
+  .article_meta {
+  	font-size: $base-font-size * 1.0;
+  	ul, li {
+  		padding-right: 15px;
+  	}
+  }  
+  .article_digest {
+  	font-size: $base-font-size * 0.8;
+  }  
+  .article_footer_meta {
+    font-size: $base-font-size * 0.8;
+  }
+  .article_bio {
+    padding-top: 2.0em;
+    h1 {
+      text-align: center;
+    }
+    p {
+      font-size: $base-font-size * 0.8;   
+      line-height: $base-line-height;
+    }
+  }  
+}
+
+@media only screen and (min-width: 1900px) {        
+  h1.entry-title { 
+    font-size: $base-font-size * 1.6; // laptop/desktop header font
+    line-height: $base-line-height * 0.8;
+  }
+  .entry-content {
+    p, ul, pre code, blockquote p {
+      font-size: $base-font-size * 0.8;
+      line-height: $base-line-height * 1.0;   
+    }
+    p {
+      margin-bottom: 1.5em;        
+    }
+  }
+  .blog-index {
+    article {
+      padding-top: 2.0em;
+    }
+  }   
+  .article_meta {
+    font-size: $base-font-size * 1.0;
+    ul, li {
+      padding-right: 15px;
+    }
+  }  
+  .article_digest {
+    font-size: $base-font-size * 0.8;
+  }  
+  .article_footer_meta {
+    font-size: $base-font-size * 0.8;
+  }
+  .article_bio {
+    padding-top: 2.0em;
+    h1 {
+      text-align: center;
+    }
+    p {
+      font-size: $base-font-size * 0.8;   
+      line-height: $base-line-height;
+    }
+  }  
+}

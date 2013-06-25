@@ -1,0 +1,150 @@
+$max-width: 100% !default;
+
+// Padding used for layout margins
+$pad-min: 18px !default;
+$pad-narrow: 25px !default;
+$pad-medium: 35px !default;
+$pad-wide: 55px !default;
+
+$header-font-size: 2em !default;
+$header-padding-top: 1.5em !default;
+$header-padding-bottom: 0em;
+
+body {
+  -webkit-text-size-adjust: none;
+  max-width: $max-width;
+  position: relative;
+  margin: 0 auto;
+
+  > header, > nav, > footer, #content > article, #content > div > article, #content > div > section {
+      padding-left: $pad-min;
+      padding-right: $pad-min;
+      @media only screen and (min-width: 480px) {
+        padding-left: $pad-narrow;
+        padding-right: $pad-narrow;
+      }
+      @media only screen and (min-width: 768px) {
+        padding-left: $pad-medium;
+        padding-right: $pad-medium;
+      }
+      @media only screen and (min-width: 1224px) {
+        padding-left: $pad-wide;
+        padding-right: $pad-wide;
+      }
+    }
+    div.pagination {
+      @extend .group;
+      margin-left: $pad-min;
+      margin-right: $pad-min;
+      @media only screen and (min-width: 480px) {
+        margin-left: $pad-narrow;
+        margin-right: $pad-narrow;
+      }
+      @media only screen and (min-width: 768px) {
+        margin-left: $pad-medium;
+        margin-right: $pad-medium;
+      }
+      @media only screen and (min-width: 1224px) {
+        margin-left: $pad-wide;
+        margin-right: $pad-wide;
+      }
+  }
+  > header {
+    font-size: $header-font-size;
+    padding-top: $header-padding-top;
+    padding-bottom: $header-padding-bottom;
+  }
+
+  div.header_nav {
+    width: 99%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.4em;
+    ul, li {
+      list-style-type: none;
+      display: inline-block;
+      margin-left: 0;
+      margin-bottom: 0.5em;
+      a, a:visited {
+        color: $link-color;
+        text-decoration: none;
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+        &:hover {
+          color: $link-color-hover;
+        }
+      }
+    }  
+  }
+
+}
+
+#content {
+  overflow: hidden;
+  > div, > article { width: 100%; }
+}
+
+@media only screen and (max-width: 480px) { 
+  #main {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 80%;
+  }
+  #content {
+    overflow: visible;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 640px) { 
+  #main {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 80%;
+  }
+  #content {
+    overflow: visible;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 768px) {         // ipad body and header font
+  #main {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 60%;
+  }
+  #content {
+    overflow: visible;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 1224px) {
+  #main {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 60%;
+  }
+  #content {
+    overflow: visible;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  #main {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 60%;
+  }
+  #content {
+    overflow: visible;
+    position: relative;
+  }
+}

@@ -1,0 +1,123 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+
+$white: #FFFFFF;
+
+html {
+	background: $white;
+}
+
+body {
+	font-family: $sans !important;
+	font-size: 1.6em;
+	//max-width: 850px;
+	max-width: 100%;	
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+
+	> header {
+		background: $white;
+		text-align: center;
+		padding-left: 0px;
+		padding-right: 0px;	
+
+		// Main site title banner
+		h1 {
+			a, a:visited, a:hover {
+				text-align: center;
+				font-family: $serif;
+				font-size: $header-font-size;
+				font-weight: 700;
+				font-style: italic;
+				letter-spacing: 8px;
+			}
+		}
+	}
+
+	> div {
+		background: $white;
+		border-bottom: 0px;
+
+		> div {
+			background: $white;
+			border-right-width: 0px;
+		}
+	}
+
+	#content {
+		> article {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+
+		> div {
+			> article, > section {
+				padding-left: 0px;
+				padding-right: 0px;
+			}	
+		}
+	}
+}
+
+#content {
+	div.pagination {
+		background: none repeat scroll 0 0 transparent;
+		margin: 0 10px;  
+		padding-bottom: 1.5em;
+		margin-top: 4em;
+		position: relative;
+		text-align: center;		
+		border-top: dotted 1px #D1D1D1;
+		border-bottom: dotted 1px #D1D1D1;
+	}
+
+	.blog-index {
+		article {
+			//padding-top: 2.0em;
+
+			header {
+				padding-left: 0;
+  				padding-right: 0;
+			}
+		}
+
+		// Post titles
+		h1 {
+			a, a:visited {
+				font-family: $serif;
+				font-weight: 400;
+			}
+
+			a:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.hentry {
+		h1.entry-title {
+			font-family: $serif;
+			font-style: italic;
+			font-weight: 400;
+		}
+	}
+	
+}
+
+figure.code {
+	.highlight {
+		background: #212C3B !important;
+
+		.gutter {
+			display: none;
+		}
+	}
+}
+
+.pre-code, html .gist .gist-file .gist-syntax .highlight pre, .highlight code {
+	background: #212C3B !important;
+}
+
+aside {
+	display: none;
+}

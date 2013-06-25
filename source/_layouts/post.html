@@ -1,0 +1,25 @@
+---
+layout: default
+single: true
+---
+
+<div>
+<article class="hentry" role="article">
+  {% include article.html %}
+  <footer>
+    <p class="article_footer_meta">
+      {% include post/categories.html %}
+    </p>
+    <div class="article_footer_meta">
+      {% if page.previous.url %}
+        <a class="previous_post" href="{{page.previous.url}}" title="Previous Post">Prev</a>
+      {% endif %}
+      {% if page.next.url %}
+        {% if page.previous.url %}
+          <span class="post_pagination_delimiter">|</span>
+        {% endif %}  
+        <a class="next_post" href="{{page.next.url}}" title="Next Post">Next</a>
+      {% endif %}
+    </div>
+  </footer>
+</article>

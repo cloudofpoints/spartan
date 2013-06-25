@@ -1,12 +1,12 @@
 Spartan
 ==========
-This is Spartan - a stripped down, no-frills responsive theme for baking your blog with the excellent [Octopress](http://otcopress.org). 
+This is Spartan - a stripped down, no-frills responsive theme for baking your blog with the excellent [Octopress](http://octopress.org). 
 
-You can take a look at Spartan [here](http://cloudofpoints.com).
+You can take a look at Spartan in the wild [here](http://cloudofpoints.com).
 
-Spartan is a customisation based on the much more fully featured whitespace theme by [Lucas Lew](https://github.com/lucaslew). Check out Lucas' site [opthemes](http://opthemes.com) for a whole slew of interesting and diverse Octopress themes.
+Spartan is a customisation based on the much more fully featured whitespace theme by [Lucas Lew](https://github.com/lucaslew). Incidentally you should probably go and check out Lucas' site [opthemes](http://opthemes.com) where there is a whole slew of diverse and interesting Octopress themes.
 
-Caveat emptor : Spartan is an ascetic theme which shuns Facebook, Google+, Disqus comments, Pinboard and Delicious. It does however have Twitter links for each post. In any case, Octopress does support integration with all of the above standard social networks so you are more than welcome to add them back in if you choose to fork the theme for your own use.
+_Caveat emptor_ : Spartan is an ascetic theme which shuns Facebook, Google+, Disqus comments, Pinboard and Delicious. It does however have Twitter links for each post. In any case, Octopress does support integration with all of the above standard social networks so you are more than welcome to add them back in if you choose to fork the theme for your own use.
 
 Install
 -------
@@ -15,16 +15,11 @@ Install
     $ rake install['spartan']
     $ rake generate
 
-Set your contact email details by adding the following line to your octopress/_config.yml file :
-
-# Mailto address
-mailto: myusername@somedomain.com
-
 Fonts
 ---------------------
 Spartan uses the Bitter, Rokkitt and Droid Sans Mono Google web fonts. The site degrades to use Georgia. The site also makes use of a small bundled subset of the free [IcoMoon](http://icomoon.io) icon font by [Keyamoon](https://twitter.com/keyamoon).
 
-The initial cut of Spartan is definitely more than a little rough around the edges and could do with some polishing. So please feel free to fork and improve where you see fit !
+The initial cut of Spartan is definitely more than a little rough around the edges and could do with some polishing. So please feel free to fork and improve / extend where you see fit !
 
 License
 -------

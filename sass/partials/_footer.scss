@@ -1,0 +1,61 @@
+body > div > footer {
+  color: $footer-color;
+  //text-shadow: lighten($footer-bg, 5) 0 1px;
+  //background-color: $footer-bg;
+  //@include background($footer-bg-front, $footer-bg-back);
+  //border-top: 1px solid $footer-border-top;
+  position: relative;
+}
+
+#footer_wrapper {
+	clear:both;
+	padding-top: 3em;
+  padding-bottom: 1em;
+  color: $footer-color;
+}
+
+#footer_copyright {
+    text-align: center;
+    max-width: 99%;
+    margin: 0 auto;
+    //font-size: 0.75em;
+    > p.copyright {
+      padding-top: 0;
+      line-height: 1px;
+    }
+}
+
+.copyright {
+  a, a:visited {
+    color: $link-color-hover;
+    text-decoration: none;
+    border-bottom: none;
+    &:hover {
+      border-bottom: 1px dotted;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {        
+  #footer_copyright { 
+    font-size: $base-font-size * 0.50; // iphone header font
+  }
+}
+
+@media only screen and (max-width: 640px) {        
+  #footer_copyright { 
+    font-size: $base-font-size * 0.50;
+  }
+}
+
+@media only screen and (min-width: 768px) {        
+  #footer_copyright { 
+    font-size: $base-font-size * 0.75; // ipad header font
+  }
+}
+
+@media only screen and (min-width: 1224px) {        
+  #footer_copyright { 
+    font-size: $base-font-size * 0.75; // laptop/desktop header font
+  }
+}

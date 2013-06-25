@@ -1,0 +1,20 @@
+{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
+{% include head.html %}
+<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} class="common_body">
+  <div id="banner_wrapper">
+    <div id="banner_title">{% include header.html %}</div>
+    <div id="top_nav">
+      <div id="site_nav">{% include navigation.html %}</div>
+    </div>
+  </div>
+  <div id="main">
+    <div id="content">
+      {{ content | expand_urls: root_url }}
+    </div>
+  </div>
+  <div id="footer_wrapper">
+    <footer>{% include footer.html %}</footer>
+    {% include after_footer.html %}
+  </div>
+</body>
+</html>
