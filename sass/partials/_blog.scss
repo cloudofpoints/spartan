@@ -10,49 +10,92 @@ h1.entry-title {
 	}
 }
 
-.article_meta {
+@mixin article-meta-base {
   margin: 0.5em 0;
-	ul, li {
-		color: $text-color-light;
-		text-transform: uppercase;
-		margin: 0 0 0 0;
+  ul, li {
+    color: $text-color-light;
+    text-transform: uppercase;
+    margin: 0 0 0 0;
     display: inline-block;
-	}
-	a, a:visited, a:hover {
-		text-decoration: none;
-		border-bottom: 0;
-		padding: 0;
-	}
-}
-
-.article_digest {
-	text-decoration: none;
-	border-bottom: 0;
-	&:hover {
-		border-bottom: 0;
-	}
-}
-
-.article_footer_meta {
-  font-size: $base-font-size * 0.8;
-  line-height: 1.5em;
-  a, a:visited {
-    color: $link-color-hover;
+  }
+  a, a:visited, a:hover {
     text-decoration: none;
-    border-bottom: none;
-    &:hover {
-      border-bottom: 1px dotted;
-    }
+    border-bottom: 0;
+    padding: 0;
+  }  
+}
+
+@mixin article-meta-resp($font-factor, $padding) {
+  font-size: $base-font-size * $font-factor;
+  ul, li {
+    padding-right: $padding;
   }
 }
 
-.post_pagination_delimiter {
+.article-meta {
+  @include article-meta-base;
+}
+
+@mixin article-digest-base {
+  text-decoration: none;
+  border-bottom: 0;
+  &:hover {
+    border-bottom: 0;
+  }  
+}
+
+@mixin article-digest-resp($font-factor, $letter-spacing) {
+    font-size: $base-font-size * $font-factor;
+    letter-spacing: $letter-spacing;  
+}
+
+.article-digest {
+  @include article-digest-base;
+}
+
+@mixin article-footer-meta-base {
+  line-height: 1.5em;
+  @include spartan-content-link;
+}
+
+@mixin article-footer-meta-resp($font-factor){
+  font-size: $base-font-size * $font-factor;  
+}
+
+.article-footer-meta {
+  @include article-footer-meta-base;
+  @include article-footer-meta-resp(0.8);
+}
+
+@mixin article-bio($top-padding, $font-factor) {
+  padding-top: $top-padding;
+  h1 {
+    text-align: center;
+  }
+  p {
+    line-height: $base-line-height;
+    font-size: $base-font-size * $font-factor;   
+  }
+}
+
+@mixin entry-content($font-factor, $letter-spacing, $line-height-factor, $bottom-margin){
+  p, ul, pre code, blockquote p {
+    font-size: $base-font-size * $font-factor;
+    letter-spacing: $letter-spacing;
+    line-height: $base-line-height * $line-height-factor;
+  }
+  p {
+    margin-bottom: $bottom-margin;
+  }
+}
+
+.post-pagination-delimiter {
   font-size: $base-font-size;
   margin: 0 5px;
   font-weight: bold;
 }
 
-img.body_img {
+img.body-img {
   max-width:100%;
   height:auto;
   padding:5px;
@@ -66,14 +109,7 @@ article {
     h3 {
       font-style: italic
     }
-    a, a:visited {
-      text-decoration: none;
-      color: $link-color-hover;
-      border-bottom: none;
-      &:hover {
-        border-bottom: 1px dotted;
-      }
-    }
+    @include spartan-content-link;
     li ul {
       font-size : 90%;
     }
@@ -86,16 +122,6 @@ article {
   ul, li {
     display: list-item;
     list-style: square outside none;
-  }
-
-  a, a:visited {
-    color: $link-color;
-    border-bottom:1px dotted;
-  }
-
-  a:hover {
-    color: $link-color-hover;
-    border-bottom:1px dotted;
   }
 
   header {
@@ -113,14 +139,7 @@ article {
     line-height: $base-line-height * 0.8;
   }
   .entry-content {
-    p, ul, pre code, blockquote p {
-  	  font-size: $base-font-size * 0.5;
-      letter-spacing: 0.5px;
-  		line-height: $base-line-height * 1.0;
-    }
-  	p {
-  		margin-bottom: 1em;
-  	}
+    @include entry-content(0.5,0.5px,1.0,1em);
   	ul {
   		margin-left: 0.5em;
   	} 
@@ -130,29 +149,18 @@ article {
       padding-top: 0.5em;
     }
   }    
-  .article_meta {
-  	font-size: $base-font-size * 0.6;
-  	ul, li {
-  		padding-right: 10px;
-  	}
+  .article-meta {
+    @include article-meta-resp(0.6,10px);
   }
-  .article_digest {
-  	font-size: $base-font-size * 0.5;
-    letter-spacing: 0.5px;
+  .article-digest {
+    @include article-digest-resp(0.5,0.5px);
   }
-  .article_footer_meta {
-    font-size: $base-font-size * 0.5;
+  .article-footer-meta {
+    @include article-footer-meta-resp(0.5);  
   }
-  .article_bio {
-    padding-top: 1.0em;
-    h1 {
-      text-align: center;
-    }
-    p {
-      font-size: $base-font-size * 0.6;   
-      line-height: $base-line-height;
-    }
-  }
+  .article-bio {
+    @include article-bio(1.0em,0.6); 
+  }     
 }
 
 @media only screen and (max-width: 640px) {        
@@ -161,14 +169,7 @@ article {
     line-height: $base-line-height * 0.8;
   }
   .entry-content {
-    p, ul, pre code, blockquote p {
-      font-size: $base-font-size * 0.5;
-      letter-spacing: 0.5px;
-      line-height: $base-line-height * 1.0;
-    }
-    p {
-      margin-bottom: 1em;
-    }
+    @include entry-content(0.5,0.5px,1.0,1em);
     ul {
       margin-left: 0.5em;
     } 
@@ -178,28 +179,17 @@ article {
       padding-top: 0.5em;
     }
   }    
-  .article_meta {
-    font-size: $base-font-size * 0.6;
-    ul, li {
-      padding-right: 10px;
-    }
+  .article-meta {
+    @include article-meta-resp(0.6,10px);
   }
-  .article_digest {
-    font-size: $base-font-size * 0.5;
-    letter-spacing: 0.5px;
+  .article-digest {
+    @include article-digest-resp(0.5,0.5px);    
   }
-  .article_footer_meta {
-    font-size: $base-font-size * 0.5;
+  .article-footer-meta {
+    @include article-footer-meta-resp(0.5);
   }
-  .article_bio {
-    padding-top: 1.0em;
-    h1 {
-      text-align: center;
-    }
-    p {
-      font-size: $base-font-size * 0.6;   
-      line-height: $base-line-height;
-    }
+  .article-bio {
+    @include article-bio(1.0em,0.6); 
   }
 }
 
@@ -209,42 +199,24 @@ article {
     line-height: $base-line-height * 0.8;
   }
   .entry-content {
-    p, ul, pre code, blockquote p {
-      font-size: $base-font-size * 0.8;
-      letter-spacing: 0.5px;
-      line-height: $base-line-height * 1.0;      
-    }    
-  	p {
-  		margin-bottom: 1.2em;
-  	}
+    @include entry-content(0.8,0.5px,1.0,1.2em);    
   }
   .blog-index {
     article {
       padding-top: 2.0em;
     }
   }  
-  .article_meta {
-  	font-size: $base-font-size * 0.8;
-  	ul, li {
-  		padding-right: 15px;
-  	}
+  .article-meta {
+    @include article-meta-resp(0.8,15px);
   }
-  .article_digest {
-  	font-size: $base-font-size * 0.8;
-    letter-spacing: 0.5px;
+  .article-digest {
+    @include article-digest-resp(0.8,0.5px);    
   }  
-  .article_footer_meta {
-    font-size: $base-font-size * 0.75;
+  .article-footer-meta {
+    @include article-footer-meta-resp(0.75);    
   }
-  .article_bio {
-    padding-top: 2.0em;
-    h1 {
-      text-align: center;
-    }
-    p {
-      font-size: $base-font-size * 0.8;   
-      line-height: $base-line-height;
-    }
+  .article-bio {
+    @include article-bio(2.0em,0.8); 
   }  
 }
 
@@ -254,40 +226,24 @@ article {
     line-height: $base-line-height * 0.8;
   }
   .entry-content {
-    p, ul, pre code, blockquote p {
-      font-size: $base-font-size * 0.8;
-      line-height: $base-line-height * 1.0;      
-    }    
-  	p {
-  		margin-bottom: 1.5em;  		
-  	}
+    @include entry-content(0.8,0.5px,1.0,1.5em);    
   }
   .blog-index {
     article {
       padding-top: 2.0em;
     }
   }  
-  .article_meta {
-  	font-size: $base-font-size * 1.0;
-  	ul, li {
-  		padding-right: 15px;
-  	}
+  .article-meta {
+    @include article-meta-resp(1.0,15px);
   }  
-  .article_digest {
-  	font-size: $base-font-size * 0.8;
+  .article-digest {
+    @include article-digest-resp(0.8,0.5px);    
   }  
-  .article_footer_meta {
-    font-size: $base-font-size * 0.8;
+  .article-footer-meta {
+    @include article-footer-meta-resp(0.8);
   }
-  .article_bio {
-    padding-top: 2.0em;
-    h1 {
-      text-align: center;
-    }
-    p {
-      font-size: $base-font-size * 0.8;   
-      line-height: $base-line-height;
-    }
+  .article-bio {
+    @include article-bio(2.0em,0.8); 
   }  
 }
 
@@ -297,39 +253,23 @@ article {
     line-height: $base-line-height * 0.8;
   }
   .entry-content {
-    p, ul, pre code, blockquote p {
-      font-size: $base-font-size * 0.8;
-      line-height: $base-line-height * 1.0;   
-    }
-    p {
-      margin-bottom: 1.5em;        
-    }
+    @include entry-content(0.8,0.5px,1.0,1.5em);    
   }
   .blog-index {
     article {
       padding-top: 2.0em;
     }
   }   
-  .article_meta {
-    font-size: $base-font-size * 1.0;
-    ul, li {
-      padding-right: 15px;
-    }
+  .article-meta {
+    @include article-meta-resp(1.0,15px);
   }  
-  .article_digest {
-    font-size: $base-font-size * 0.8;
+  .article-digest {
+    @include article-digest-resp(0.8,0.5px);    
   }  
-  .article_footer_meta {
-    font-size: $base-font-size * 0.8;
+  .article-footer-meta {
+    @include article-footer-meta-resp(0.8);
   }
-  .article_bio {
-    padding-top: 2.0em;
-    h1 {
-      text-align: center;
-    }
-    p {
-      font-size: $base-font-size * 0.8;   
-      line-height: $base-line-height;
-    }
+  .article-bio {
+    @include article-bio(2.0em,0.8); 
   }  
 }

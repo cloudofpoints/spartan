@@ -5,13 +5,13 @@
     {% else %}
       <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
     {% endif %}
-    <div class="article_meta"> 
+    <div class="article-meta"> 
       <ul>
         <li>{% include post/date.html %}{{ time }}</li>
         <li>
           <a href="{{ root_url }}{{ post.url }}" class="icon-alone">
             <span aria-hidden="true" data-icon="&#xe008;"></span>
-            <span class="screen-reader-text">POST</span>
+            <span class="screen-reader-text">PERMALINK</span>
           </a>          
         </li>
         <li>
@@ -34,7 +34,7 @@
   {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
   {% if excerpted == 'true' %}
     <footer>
-      <a class="article_digest" rel="full-article" href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a>
+      <a class="article-digest" rel="full-article" href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a>
     </footer>
   {% endif %}
 {% else %}

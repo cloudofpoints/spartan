@@ -10,7 +10,6 @@ html {
 body {
 	font-family: $sans !important;
 	font-size: 1.6em;
-	//max-width: 850px;
 	max-width: 100%;	
 	padding-left: 0.5em;
 	padding-right: 0.5em;
@@ -60,21 +59,9 @@ body {
 }
 
 #content {
-	div.pagination {
-		background: none repeat scroll 0 0 transparent;
-		margin: 0 10px;  
-		padding-bottom: 1.5em;
-		margin-top: 4em;
-		position: relative;
-		text-align: center;		
-		border-top: dotted 1px #D1D1D1;
-		border-bottom: dotted 1px #D1D1D1;
-	}
 
 	.blog-index {
 		article {
-			//padding-top: 2.0em;
-
 			header {
 				padding-left: 0;
   				padding-right: 0;

@@ -7,18 +7,18 @@ single: true
 <article class="hentry" role="article">
   {% include article.html %}
   <footer>
-    <p class="article_footer_meta">
+    <p class="article-footer-meta">
       {% include post/categories.html %}
     </p>
-    <div class="article_footer_meta">
+    <div class="article-footer-meta">
       {% if page.previous.url %}
-        <a class="previous_post" href="{{page.previous.url}}" title="Previous Post">Prev</a>
+        <a class="previous-post" href="{{page.previous.url}}" title="Previous Post">Prev</a>
       {% endif %}
       {% if page.next.url %}
         {% if page.previous.url %}
-          <span class="post_pagination_delimiter">|</span>
+          <span class="post-pagination-delimiter">|</span>
         {% endif %}  
-        <a class="next_post" href="{{page.next.url}}" title="Next Post">Next</a>
+        <a class="next-post" href="{{page.next.url}}" title="Next Post">Next</a>
       {% endif %}
     </div>
   </footer>

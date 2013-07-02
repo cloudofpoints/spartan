@@ -1,13 +1,13 @@
 {% capture category %}{{ post.categories | size }}{% endcapture %}
 <h1 class="entry-title"><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a></h1>
-<div class="article_meta">
+<div class="article-meta">
 	<ul>
 		<li>{{ post.date | date: "%d %B %Y" }}</li>
 	</ul>
 </div>
 {% if category != '0' %}
 <footer>
-	<p class="article_footer_meta">
+	<p class="article-footer-meta">
   	<span class="categories">Categories : {{ post.categories | category_links }}</span>
 	</p>
 </footer>

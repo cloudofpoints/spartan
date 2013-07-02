@@ -59,6 +59,17 @@ a {
   @include transition(color .3s);
 }
 
+@mixin spartan-content-link {
+  a, a:visited {
+    text-decoration: none;
+    color: $link-color-hover;
+    border-bottom: none;
+    &:hover {
+      border-bottom: 1px dotted;
+    }
+  }
+}
+
 html {
   background: $page-bg;
 }
