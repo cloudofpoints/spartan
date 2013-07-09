@@ -69,9 +69,7 @@ h1.entry-title {
 
 @mixin article-bio($top-padding, $font-factor) {
   padding-top: $top-padding;
-  h1 {
-    text-align: center;
-  }
+  text-align: center;
   p {
     line-height: $base-line-height;
     font-size: $base-font-size * $font-factor;   
